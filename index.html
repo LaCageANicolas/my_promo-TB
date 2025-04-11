@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ma promo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles6.css" />
+  <style> 
+    .container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      background-color: white;
+      padding: 10px;
+      gap: 10px;
+    }
+
+    .container > div {
+      position: relative;
+      background-color: red;
+      border: 1px solid black;
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+      cursor: pointer;
+      color: white;
+      border-radius: 8px;
+    }
+
+    
+    .container > div::after {
+      content: attr(data-message);
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: black;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .container > div:hover::after {
+      animation: fadeInUp 0.4s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Ma promo</h1>
+
+  <div class="container">
+    <div data-message="Medhi Nassima">MN</div>
+    <div data-message="DUfour Audrey">DA</div>
+    <div data-message="Alireza Ali">AA</div>
+    <div data-message="Briquet Loris">BL</div>
+    <div data-message=" Tincq Pauline">TP</div>
+    <div data-message=" Gahgou oumaima">GO</div>
+    <div data-message="Lambal Tony">LT</div>
+    <div data-message="Tate Bryan">TB</div>
+    <div data-message="Cambien Byron ">CB</div>
+    <div data-message="Adil">A</div>
+    <div data-message=" Cochez Fiona ">CF</div>
+    <div data-message="Dimitri">CD</div>
+    <div data-message=" Boberek thomas ">BT</div>
+    <div data-message="sofia">BS</div>
+    <div data-message=" Soufar Luigi">SL</div>
+  </div>
+</body>
+</html>
